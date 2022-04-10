@@ -8,8 +8,9 @@ import os
 data = pd.read_excel('dataset.xlsx')
 output = {}
 NumImgs = []
-if not os.path.exists("./SmartPhoneTeardownImages"): #Create folders to save images.
-    os.mkdir("./SmartPhoneTeardownImages")
+deviceType = 'SmartPhone'
+if not os.path.exists("./%sTeardownImages" %(deviceType)): #Create folders to save images.
+    os.mkdir("./%sTeardownImages" %(deviceType))
     
 for i in range(len(data)):
     br = data['Brand'][i]
@@ -25,14 +26,14 @@ for i in range(len(data)):
     posMo.append(mo.replace(' ','').capitalize())
     posMo.append(mo.replace(' ','').lower())
     '''
-    if not os.path.exists("./SmartPhoneTeardownImages/%s" %(br)):
-        os.mkdir("./SmartPhoneTeardownImages/%s" %(br))
+    if not os.path.exists("./%sTeardownImages/%s" %(deviceType, br)):
+        os.mkdir("./%sTeardownImages/%s" %(deviceType, br))
         
-    if not os.path.exists("./SmartPhoneTeardownImages/%s/%s" %(br,rep)):
-        os.mkdir("./SmartPhoneTeardownImages/%s/%s" %(br,rep))
+    if not os.path.exists("./%sTeardownImages/%s/%s" %(deviceType, br,rep)):
+        os.mkdir("./%sTeardownImages/%s/%s" %(deviceType, br,rep))
 
 
-    savePath = "./SmartPhoneTeardownImages/%s/%s/%s" %(br,rep,mo)
+    savePath = "./%sTeardownImages/%s/%s/%s" %(deviceType, br,rep,mo)
     if not os.path.exists(savePath):
         os.mkdir(savePath)  
 
