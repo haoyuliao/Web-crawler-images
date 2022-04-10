@@ -14,7 +14,7 @@ if not os.path.exists("./%sTeardownImages" %(deviceType)): #Create folders to sa
     
 for i in range(len(data)):
     br = data['Brand'][i]
-    mo = data['mode'][i]
+    mo = data['mode'][i].replace('"', "")
     rep = data['repairability'][i]
     linkd = data['link'][i]
     '''
