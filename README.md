@@ -1,4 +1,4 @@
-# Web-crawler-practice
+# Web Crawler Image
 * The project is the example how to download images form the prefered website by web crawler technique.
 
 ## Requirement libraries 
